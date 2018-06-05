@@ -8,12 +8,12 @@ export class SpeakerController {
     constructor(private readonly spearkerService: SpeakerService) { }
 
     @Get()
-    public async findAll() {
+    async findAll() {
         return await this.spearkerService.getSpeakers();
     }
 
     @Post()
-    public async create(@Body() body: Speaker) {
+    async create(@Body() body: Speaker) {
         this.spearkerService.create(body);
     }
 }
